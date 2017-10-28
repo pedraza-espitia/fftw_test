@@ -1,0 +1,64 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{salvaspackage}
+\graphicspath{{./Figs/}}
+% partial derivatives
+\newcommand\pder[2][]{\ensuremath {\dfrac{\partial#1}{\partial#2}}} 
+\newcommand{\ppder}[2]{ \ensuremath {\dfrac{\partial^2 #1}{\partial #2^2}}}
+
+%%%%%%    	title	    %%%%%%
+\title{Logbook:  FFTW3}
+
+\author{Pedraza-Espitia S.\\ \\< \url{git.io/salvador} >}
+\date{}
+%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\spacing{1.1}
+
+%
+%\problema{1}{Nproblem}
+%
+\section{Instalación}
+Siguiendo las instrucciones en \url{http://www.fftw.org/fftw3_doc/Installation-on-Unix.html#Installation-on-Unix}
+
+Descargar la última versión de fftw3, descomprimir (extraer en $\sim$\verb|/softw|, en mi caso se creo el directorio \verb|fftw-3.3.6-pl2|), 
+
+En la terminal:
+\begin{lstlisting}
+cd ~/softw/fftw-3.3.6-pl2; mkdir ../fftw
+./configure --prefix=~/softw/fftw
+make
+sudo make install
+cd ..
+mv fftw-3.3.6-pl2 ~/sources
+\end{lstlisting}
+
+\section{Programa en C}
+Hay tres partes esenciales para remarcar, la primera es la lectura de los datos de un archivo de datos que debe contener una columna de datos reales (float), la segunda parte usa las funciones de la biblioteca \verb|fftw.3| para obtener la transformada de fourier y la tercera parte guarda los datos de la salida a un archivo que automáticamente nombrará \verb|salida.fftw|.
+\lstinputlisting[language=c++]{processdata_fftw.cpp}
+
+El programa se guarda en un archivo \verb|processdata_fftw.cpp| y se compila con\\
+\begin{lstlisting}
+g++ -o processdata_fftw processdata_fftw.cpp -lfftw3 -I/home/salva/softw/fftw-3.3.6-pl2/fftw/include -L/home/salva/softw/fftw-3.3.6-pl2/fftw/lib
+\end{lstlisting}
+
+Se ejecuta con
+\begin{lstlisting}
+./processdata_fftw data.dat
+\end{lstlisting}
+\section{Output}
+\label{sec:output}
+Para graficar uso
+\begin{lstlisting}
+gnuplot -p -e "plot 'data.dat'"
+\end{lstlisting}
+\coi{8}{plotlogistica}{Ec logística $c=2.x$ .}
+\coi{8}{fftwlogistica}{Después de aplicar FFTW a los datos que se graficaron en la \autoref{plotlogistica}, se obtienen las magnitudes de la salida de FFTW (números complejos).}
+% section output (end)
+
+%$\termina$
+%\{ \}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

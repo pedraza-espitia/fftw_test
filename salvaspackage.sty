@@ -1,0 +1,77 @@
+\usepackage[top=1in, left=1.25in, right=1.25in, bottom=1in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{DejaVuSerif}
+%\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+
+%\usepackage{amssymb,amsmath,amsfonts,amsthm,textcomp}
+
+\usepackage[pdftex]{xcolor,graphicx}
+\usepackage{url}
+\definecolor{marron}{RGB}{80,50,10}
+\definecolor{azul}{RGB}{10,50,80}
+
+\usepackage[pdftex,breaklinks,colorlinks,citecolor=black,%
+urlcolor=black,%
+citecolor=marron,%
+urlcolor=azul,%
+linkcolor=azul,%
+pdfauthor={Salvador},pdftitle={Tarea - Salvador Pedraza Espitia},%
+pdfmenubar=false]{hyperref}
+
+%\usepackage[libertine]{newtxmath}
+\usepackage{setspace}
+
+\newcommand{\coi}[3]{%
+\begin{figure}[!hbt] \centering \includegraphics[width=#1cm]{#2}%
+\caption{#3}\label{#2}%
+\end{figure}%{ancho(cm)}{nombre-label}{descripcion}
+}
+\newcommand{\problema}[2]{%
+\begin{center}
+%\begin{figure}[!hbt] 
+\centering \includegraphics[width=#1\textwidth]{enunciados/#2}%
+%\end{figure}%{ancho}{nombre}
+\end{center}
+}
+  \let\oldtheequation\theequation
+  \makeatletter
+      \def\tagform@#1{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
+      \renewcommand{\theequation}{(\oldtheequation)}
+  \makeatother
+
+\newcommand{\termina}[0]{\hspace{\stretch{1}}\square}
+%\graphicspath{{./Figs4/}}
+\usepackage[round]{natbib}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
