@@ -54,9 +54,10 @@ gnuplot -p -e "plot 'data.dat'"
 \coi{8}{fftwlogistica}{Después de aplicar FFTW a los datos que se graficaron en la \autoref{plotlogistica}, se obtienen las magnitudes de la salida de FFTW (números complejos).}
 % section output (end)
 \FloatBarrier
-\section{Transformada de Fourier en Python}
+\section{Transformada de Fourier Discreta en Python}
 \label{sec:TFP}
-
+Un objetivo es programar la transformada de Fourier discreta en \textsc{Python} y obtener el mismo resultado que los algoritmos implementados en FFTW
+\lstinputlisting[language=Python]{DFTfromScratch.py}
 % section TFP (end)
 
 %$\termina$
