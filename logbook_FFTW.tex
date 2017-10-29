@@ -42,7 +42,7 @@ g++ -o processdata_fftw processdata_fftw.cpp -lfftw3 -I/home/salva/softw/fftw-3.
 
 Se ejecuta con
 \begin{lstlisting}
-./processdata_fftw data.dat
+./processdata_fftw input.dat outputName
 \end{lstlisting}
 \section{Output}
 \label{sec:output}
@@ -53,7 +53,7 @@ gnuplot -p -e "plot 'data.dat'"
 \coi{8}{plotlogistica}{Ec logística $c=2.x$ .}
 \coi{8}{fftwlogistica}{Después de aplicar FFTW a los datos que se graficaron en la \autoref{plotlogistica}, se obtienen las magnitudes de la salida de FFTW (números complejos).}
 % section output (end)
-
+\FloatBarrier
 \section{Transformada de Fourier en Python}
 \label{sec:TFP}
 

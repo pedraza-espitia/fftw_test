@@ -78,3 +78,20 @@ pdfmenubar=false]{hyperref}
 % partial derivatives
 \newcommand\pder[2][]{\ensuremath {\dfrac{\partial#1}{\partial#2}}} 
 \newcommand{\ppder}[2]{ \ensuremath {\dfrac{\partial^2 #1}{\partial #2^2}}}
+
+\usepackage{placeins}%Para usar \FloatBarrier
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\usepackage{bm}
+%\def\matriz#1{\underline{\underline{#1}}}
+%\newcommand{\matriz}[1]{\overline{\overline{#1}}}
+\newcommand{\matriz}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+  \let\oldtheequation\theequation
+  \makeatletter
+  \def\tagform@#1{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
+  \renewcommand{\theequation}{(\oldtheequation)}
+  \makeatother
