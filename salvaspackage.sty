@@ -44,11 +44,10 @@ pdfmenubar=false]{hyperref}
   \makeatother
 
 \newcommand{\termina}[0]{\hspace{\stretch{1}}\square}
-%\graphicspath{{./Figs4/}}
+
 \usepackage[round]{natbib}
 
 \usepackage{listings}
-\usepackage{color}
  
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -75,3 +74,7 @@ pdfmenubar=false]{hyperref}
 }
  
 \lstset{style=mystyle}
+
+% partial derivatives
+\newcommand\pder[2][]{\ensuremath {\dfrac{\partial#1}{\partial#2}}} 
+\newcommand{\ppder}[2]{ \ensuremath {\dfrac{\partial^2 #1}{\partial #2^2}}}

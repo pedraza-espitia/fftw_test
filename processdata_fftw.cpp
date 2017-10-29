@@ -3,32 +3,34 @@
 #include <cmath>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 using namespace std;
 
-// Macros for the real and imaginary parts
+// Define some constants
 #define REAL 0
 #define IMAG 1
 #define MAX 2200
 
-int main( int argc, char **argv )
+int main( int argc, char *argv[] )
 {
-    FILE *file = fopen(argv[1], "r");
-    float arraydata[MAX];
-    int i = 0;
-    int final = 0;
-    if (file != NULL) {
-        while (!feof(file) && i < MAX) {
-            if (fscanf(file, "%f", &arraydata[i++]) != -1) {
-                printf("%f \n", arraydata[i-1]);
-		final = i;
-            }
+    	// Read the data from argv[1]
+    	FILE *file = fopen(argv[1], "r");
+    	float arraydata[MAX];
+    	int i = 0;
+    	int final = 0;
+    	if (file != NULL) {
+        	while (!feof(file) && i < MAX) {
+            		if (fscanf(file, "%f", &arraydata[i++]) != -1) {
+                		printf("%f \n", arraydata[i-1]);
+				final = i;
+        		}
         }
         fclose(file);
-    } else {
+    	} else {
         printf("Unable to open file");
         return EXIT_FAILURE;
-    }
+    	}
 
 	// Define the length of te complex arrays
 	int n = final;
@@ -56,9 +58,14 @@ int main( int argc, char **argv )
 		else
 			cout << y[i][REAL] << " + " << y[i][IMAG] << "i" << endl;
 
-// Write my output
+	// Write my output
 	FILE *salida;
-	salida = fopen("salida.fftw","w");
+	if (argc == 3){
+	salida = fopen(strcat (argv[2],".fftw"),"w");
+	}
+	else{
+	salida = fopen( "salida.fftw" ,"w");
+	}
 	for (int i=0; i<n; i++){
 		fprintf( salida,"%.4f,%.4f\n",y[i][REAL], y[i][IMAG] );
 	}

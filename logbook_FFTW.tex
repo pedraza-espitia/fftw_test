@@ -1,9 +1,6 @@
 \documentclass[letterpaper,11pt]{article}
 \usepackage{salvaspackage}
 \graphicspath{{./Figs/}}
-% partial derivatives
-\newcommand\pder[2][]{\ensuremath {\dfrac{\partial#1}{\partial#2}}} 
-\newcommand{\ppder}[2]{ \ensuremath {\dfrac{\partial^2 #1}{\partial #2^2}}}
 
 %%%%%%    	title	    %%%%%%
 \title{Logbook:  FFTW3}
@@ -56,6 +53,11 @@ gnuplot -p -e "plot 'data.dat'"
 \coi{8}{plotlogistica}{Ec logística $c=2.x$ .}
 \coi{8}{fftwlogistica}{Después de aplicar FFTW a los datos que se graficaron en la \autoref{plotlogistica}, se obtienen las magnitudes de la salida de FFTW (números complejos).}
 % section output (end)
+
+\section{Transformada de Fourier en Python}
+\label{sec:TFP}
+
+% section TFP (end)
 
 %$\termina$
 %\{ \}
