@@ -27,7 +27,7 @@ pdfmenubar=false]{hyperref}
 
 \newcommand{\coi}[3]{%
 \begin{figure}[!hbt] \centering \includegraphics[width=#1cm]{#2}%
-\caption{#3}\label{#2}%
+\caption{\small{#3}}\label{#2}%
 \end{figure}%{ancho(cm)}{nombre-label}{descripcion}
 }
 \newcommand{\problema}[2]{%
@@ -90,8 +90,8 @@ pdfmenubar=false]{hyperref}
 \newcommand{\matriz}[1]{\boldsymbol{\mathbf{#1}}}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 
-  \let\oldtheequation\theequation
-  \makeatletter
-  \def\tagform@#1{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
-  \renewcommand{\theequation}{(\oldtheequation)}
-  \makeatother
+ % \let\oldtheequation\theequation
+ % \makeatletter
+ % \def\tagform@#1{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
+%  \renewcommand{\theequation}{(\oldtheequation)}
+ % \makeatother
